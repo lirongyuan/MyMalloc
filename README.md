@@ -11,13 +11,13 @@ List 64 will contain blocks larger or equal than 64 * 8 = 512 and will be ordere
  
 When an object is freed, the allocator will check if the neighbor objects before and after are free and if possible
 coalesce the freed object with its neighbors by doing the following:
-* Check the footer of the left neighbor object (the object just before the object being freed) to see if it is free.
+1. Check the footer of the left neighbor object (the object just before the object being freed) to see if it is free.
 If that is the case, remove the left neighbor from its free list using the previous and next pointers and coalesce
 this object with the object being freed.
-* Check the header of the right neighbor object (the object just after the object being freed) to see if it is free.
+2. Check the header of the right neighbor object (the object just after the object being freed) to see if it is free.
 If that is the case, remove the right neighbor from its free list using the previous and next pointers and coalesce it
 with the object being  freed.
-* Place the freed object in the corresponding free list and update the header and footer.
+3. Place the freed object in the corresponding free list and update the header and footer.
 
 If the object being freed happens to be at the beginning of the heap, it is likely that the coalescing algorithm will
 try to coalesce the memory beyond the the beginning of the heap crashing your allocator. The same will happen if the
