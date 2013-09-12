@@ -1,0 +1,339 @@
+#!/bin/bash
+
+make clean
+make MyMalloc.so mtest1 mtest2 mtest3 mtest4 mtest5 mtest6 mtest7 mtest8 mtest9 mtest10 mtest11 mtest12
+
+export LD_LIBRARY_PATH=.
+
+#-------------- test1 ----------------------
+echo
+echo "--- Running test1(10pts) ---"
+rm -f  out
+mtest1 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: heapsize <=8304; heapsize was $heapsize" 
+if [ $heapsize -le 8304 ];
+then
+  echo ">>> test1 passed";
+  test1=passed
+else
+  echo "*** test1 failed";
+  test1=failed
+fi
+
+#-------------- test2 ----------------------
+echo
+echo "--- Running test2(10pts) ---"
+rm -f  out
+mtest2 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: heapsize <=8304; heapsize was $heapsize" 
+if [ $heapsize -le 8304 ];
+then
+  echo ">>> test2 passed";
+  test2=passed
+else
+  echo "*** test2 failed";
+  test2=failed
+fi
+
+#-------------- test3 ----------------------
+echo
+echo "--- Running test3(10pts) ---"
+rm -f  out
+mtest3 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: heapsize >= 8304; heapsize was $heapsize" 
+if [ $heapsize -ge 8304 ];
+then
+  echo ">>> test3 passed";
+  test3=passed
+else
+  echo "*** test3 failed";
+  test3=failed
+fi
+
+#-------------- test4 ----------------------
+echo
+echo "--- Running test4(10pts) ---"
+rm -f  out
+mtest4 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [ $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test4 passed";
+  test4=passed
+else
+  echo "*** test4 failed";
+  test4=failed
+fi
+
+#-------------- test5 ----------------------
+echo
+echo "--- Running test5(10pts) ---"
+rm -f  out
+mtest5 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [ $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test5 passed";
+  test5=passed
+else
+  echo "*** test5 failed";
+  test5=failed
+fi
+
+#-------------- test6 ----------------------
+echo
+echo "--- Running test6(10pts) ---"
+rm -f  out
+mtest6 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [ $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test6 passed";
+  test6=passed
+else
+  echo "*** test6 failed";
+  test6=failed
+fi
+
+#-------------- test7 ----------------------
+echo
+echo "--- Running test7(10pts) ---"
+rm -f  out
+mtest7 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: heapsize <=8304; heapsize was $heapsize" 
+if [ $heapsize -le 8304 ];
+then
+  echo ">>> test7 passed";
+  test7=passed
+else
+  echo "*** test7 failed";
+  test7=failed
+fi
+
+#-------------- test8 ----------------------
+echo
+echo "--- Running test8(10pts) ---"
+rm -f  out
+mtest8 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [ $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test8 passed";
+  test8=passed
+else
+  echo "*** test8 failed";
+  test8=failed
+fi
+
+#-------------- test9 ----------------------
+echo
+echo "--- Running test9(10pts) ---"
+rm -f  out
+mtest9 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [ $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test9 passed";
+  test9=passed
+else
+  echo "*** test9 failed";
+  test9=failed
+fi
+
+#-------------- test10 ----------------------
+echo
+echo "--- Running test10(10pts) ---"
+rm -f  out
+mtest10 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: heapsize <= 8304; heapsize was $heapsize" 
+if [ $heapsize -le 8304 ];
+then
+  echo ">>> test10 passed";
+  test10=passed
+else
+  echo "*** test10 failed";
+  test10=failed
+fi
+
+#-------------- test11 ----------------------
+echo
+echo "--- Running test11(10pts) ---"
+rm -f  out
+mtest11 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [  $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test11 passed";
+  test11=passed
+else
+  echo "*** test11 failed";
+  test11=failed
+fi
+
+#-------------- test12 ----------------------
+echo
+echo "--- Running test12(10pts) ---"
+rm -f  out
+mtest12 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 8304=< heapsize < 10000; heapsize was $heapsize" 
+if [  $heapsize -lt 10000 -a $heapsize -ge 8304 ];
+then
+  echo ">>> test12 passed";
+  test12=passed
+else
+  echo "*** test12 failed";
+  test12=failed
+fi
+
+
+
+total=0
+echo
+echo ------- SUMMARY ---------
+if [ $test1 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 1.   test1: $current out of 10
+
+if [ $test2 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 2.   test2: $current out of 10
+
+if [ $test3 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 3.   test3: $current out of 10
+
+if [ $test4 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 4.   test4: $current out of 10
+
+if [ $test5 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 5.   test5: $current out of 10
+
+if [ $test6 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 6.   test6: $current out of 10
+
+if [ $test7 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 7.   test7: $current out of 10
+
+if [ $test8 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 8.   test8: $current out of 10
+
+if [ $test9 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 9.   test9: $current out of 10
+
+if [ $test10 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 10. test10: $current out of 10
+
+if [ $test11 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 11. test11: $current out of 10
+
+if [ $test12 = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 12. test12: $current out of 10
+
+
+echo -------------------------
+echo Total = $total out of 120
