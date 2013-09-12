@@ -9,11 +9,14 @@ The data structure is a table of free lists. There will be 65 double-linked list
 Lists 0 to 63 will have blocks of size 8 * i, where i is the number of the list.
 List 64 will contain blocks larger or equal than 64 * 8 = 512 and will be ordered by size in ascending order. 
  
-When an object is freed, the allocator will check if the neighbor objects before and after are free and if possible coalesce the freed object with its neighbors by doing the following:
+When an object is freed, the allocator will check if the neighbor objects before and after are free and if possible
+coalesce the freed object with its neighbors by doing the following:
 1. Check the footer of the left neighbor object (the object just before the object being freed) to see if it is also free.
-If that is the case, remove the left neighbor from its free list using the previous and next pointers and coalesce this object with the object being freed.
+If that is the case, remove the left neighbor from its free list using the previous and next pointers and coalesce
+this object with the object being freed.
 2. Check the header of the right neighbor object (the object just after the object being freed) to see if it is also free.
-If that is the case, remove the right neighbor from its free list using the previous and next pointers and coalesce it with the object being  freed.
+If that is the case, remove the right neighbor from its free list using the previous and next pointers and coalesce it
+with the object being  freed.
 3. Place the freed object in the corresponding free list and update the header and footer.
 
 If the object being freed happens to be at the beginning of the heap, it is likely that the coalescing algorithm will
