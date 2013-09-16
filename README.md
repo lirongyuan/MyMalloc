@@ -1,9 +1,9 @@
 MyMalloc Project:
 =================
 
-http://www.cs.purdue.edu/homes/grr/cs354/
+http://www.cs.purdue.edu/homes/grr/cs354/lab2-dl-malloc/
 
-```
+
 MyMalloc.cc  to implement a best fit allocator using boundary tags and segregated free lists. 
 The data structure is a table of free lists. There will be 65 double-linked lists in total numbered 0 to 64.
 Lists 0 to 63 will have blocks of size 8 * i, where i is the number of the list.
@@ -30,7 +30,7 @@ meaning that the memory before this section of memory is not free and cannot be 
 at the end of the chunk, add a "dummy header" or fence post with the flag set to 1 meaning that the memory
 beyond the chunk cannot be coalesced. That is in addition to the header and footer added to the chunk
 when it is placed in the free list.
-```
+
 
 A. Notes for mtest(1-12).cc:
 ============================
